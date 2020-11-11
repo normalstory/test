@@ -48,7 +48,7 @@ class EventTest extends Component {
   render() {
     return (
       <div>
-        <h5>이벤트 실습</h5>
+        <h5>이벤트 실습(class)</h5>
         <input
           type="text"
           name="message"
