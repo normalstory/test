@@ -9,6 +9,7 @@ import Mycomponent from './components/Mycomponent';
 import MycomponentClass from './components/MycomponentClass';
 import ComponentStateClass from './components/ComponentStateClass';
 import HooksBasic from './components/HooksBasic';
+import EventTest from './components/EventTest';
 
 class App extends Component {
   render() {
@@ -50,6 +51,9 @@ class App extends Component {
             </li>
             <li>
               <HooksBasic></HooksBasic>
+            </li>
+            <li>
+              <EventTest />
             </li>
           </ol>
 
