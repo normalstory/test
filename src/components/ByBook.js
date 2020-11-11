@@ -9,6 +9,7 @@ const ByBook = ({ match }) => {
       <br />
       <Link to={`${match.url}/redBook`}>빨간책</Link>
       <br />
+
       <Route path={`${match.url}/:bookId`} component={Book} />
       <Route exact path={match.url} render={() => <h3>책을 선택해주세요</h3>} />
     </div>

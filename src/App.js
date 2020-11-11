@@ -4,7 +4,11 @@ import Byhistory from './components/Byhistory';
 import Byrouter from './components/Byrouter';
 import ByBook from './components/ByBook';
 import Spread from './components/Spread';
-//import * as Destuctring from './components/Destuctring';
+import Destruct from './components/Destruct';
+import Mycomponent from './components/Mycomponent';
+import MycomponentClass from './components/MycomponentClass';
+import ComponentStateClass from './components/ComponentStateClass';
+import HooksBasic from './components/HooksBasic';
 
 class App extends Component {
   render() {
@@ -28,10 +32,24 @@ class App extends Component {
               <h3>ES6+</h3>
               <Link to="/spread-operator">전개 연산자</Link>
               <br />
-              <Link to="/array-destructring">배열 비구조화</Link>
+              <Link to="/destructring">비구조화</Link>
               <br />
-              <Link to="/object-destructring">객체 비구조화</Link>
-              <br />
+            </li>
+            <li>
+              <Mycomponent name={'react'} favoriteNum={1}>
+                component function
+              </Mycomponent>
+            </li>
+            <li>
+              <MycomponentClass name={'React'} favonum={9}>
+                component class
+              </MycomponentClass>
+            </li>
+            <li>
+              <ComponentStateClass>State in the component of Class</ComponentStateClass>
+            </li>
+            <li>
+              <HooksBasic></HooksBasic>
             </li>
           </ol>
 
@@ -42,8 +60,7 @@ class App extends Component {
           <Route path="/at-books" component={bybook2} />
           <Route path="/sub-at-books" component={ByBook} />
           <Route path="/spread-operator" component={Spread} />
-          {/* <Route path="/array-destructring" component={Destuctring.DesArray} />
-          <Route path="/object-destructring" component={Destuctring.DesObject} /> */}
+          <Route path="/destructring" component={Destruct} />
         </div>
       </BrowserRouter>
     );
