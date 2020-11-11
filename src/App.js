@@ -11,6 +11,7 @@ import ComponentStateClass from './components/ComponentStateClass';
 import HooksBasic from './components/HooksBasic';
 import EventTest from './components/EventTest';
 import EventByFunc from './components/EventByFunc';
+import ReactMapTest from './components/ReactMapTest';
 
 class App extends Component {
   render() {
@@ -58,6 +59,9 @@ class App extends Component {
             </li>
             <li>
               <EventByFunc />
+            </li>
+            <li>
+              <ReactMapTest />
             </li>
           </ol>
 
