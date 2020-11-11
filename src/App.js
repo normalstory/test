@@ -5,13 +5,7 @@ import Byrouter from './components/Byrouter';
 import ByBook from './components/ByBook';
 import Spread from './components/Spread';
 import Destruct from './components/Destruct';
-import Mycomponent from './components/Mycomponent';
-import MycomponentClass from './components/MycomponentClass';
-import ComponentStateClass from './components/ComponentStateClass';
-import HooksBasic from './components/HooksBasic';
-import EventTest from './components/EventTest';
-import EventByFunc from './components/EventByFunc';
-import ReactMapTest from './components/ReactMapTest';
+import ReactBookE2 from './components/ReactBookE2';
 
 class App extends Component {
   render() {
@@ -39,29 +33,9 @@ class App extends Component {
               <br />
             </li>
             <li>
-              <Mycomponent name={'react'} favoriteNum={1}>
-                component function
-              </Mycomponent>
-            </li>
-            <li>
-              <MycomponentClass name={'React'} favonum={9}>
-                component class
-              </MycomponentClass>
-            </li>
-            <li>
-              <ComponentStateClass>State in the component of Class</ComponentStateClass>
-            </li>
-            <li>
-              <HooksBasic></HooksBasic>
-            </li>
-            <li>
-              <EventTest />
-            </li>
-            <li>
-              <EventByFunc />
-            </li>
-            <li>
-              <ReactMapTest />
+              <h3>React 개정판</h3>
+              <Link to="/reactBook-E2">1~6</Link>
+              <br />
             </li>
           </ol>
 
@@ -73,6 +47,7 @@ class App extends Component {
           <Route path="/sub-at-books" component={ByBook} />
           <Route path="/spread-operator" component={Spread} />
           <Route path="/destructring" component={Destruct} />
+          <Route path="/reactBook-E2" component={ReactBookE2} />
         </div>
       </BrowserRouter>
     );
