@@ -37,7 +37,7 @@ const EventByFunc = () => {
 
   return (
     <div>
-      <h5>이벤트 실습(class)</h5>
+      <h5>이벤트 실습 by function (feat Hooks)</h5>
       <input
         type="text"
         name="username"
