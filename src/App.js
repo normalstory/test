@@ -6,8 +6,23 @@ import ByBook from './components/ByBook';
 import Spread from './components/Spread';
 import Destruct from './components/Destruct';
 import ReactBookE2 from './components/ReactBookE2';
+import LifecycleTest from './components/LifecycleTest';
+import ErrorBoundary from './components/ErrorBoundary';
+
+function getRandomColor() {
+  return '#' + Math.floor(Math.random() * 16777215).toString(16);
+}
 
 class App extends Component {
+  state = {
+    color: '#000000',
+  };
+  handleClick = () => {
+    this.setState({
+      color: getRandomColor(),
+    });
+  };
+
   render() {
     return (
       <BrowserRouter>
@@ -34,7 +49,13 @@ class App extends Component {
             </li>
             <li>
               <h3>React 개정판</h3>
-              <Link to="/reactBook-E2">1~6</Link>
+              <Link to="/reactBook-E2_1to6">1~6</Link>
+              <br />
+              <ErrorBoundary>
+                {/* <Link to="/reactBook-E2_lifecycle">life-cycle</Link> */}
+                <LifecycleTest color={this.state.color} />
+              </ErrorBoundary>
+              <button onClick={this.handleClick}>랜덤컬러</button>
               <br />
             </li>
           </ol>
@@ -47,7 +68,8 @@ class App extends Component {
           <Route path="/sub-at-books" component={ByBook} />
           <Route path="/spread-operator" component={Spread} />
           <Route path="/destructring" component={Destruct} />
-          <Route path="/reactBook-E2" component={ReactBookE2} />
+          <Route path="/reactBook-E2_1to6" component={ReactBookE2} />
+          {/* <Route path="/reactBook-E2_lifecycle" component={LifecycleTest} /> */}
         </div>
       </BrowserRouter>
     );
