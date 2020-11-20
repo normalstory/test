@@ -8,6 +8,7 @@ import Destruct from './components/Destruct';
 import ReactBookE2 from './components/ReactBookE2';
 import LifecycleTest from './components/LifecycleTest';
 import ErrorBoundary from './components/ErrorBoundary';
+import None_immer from './components/None_immer';
 
 function getRandomColor() {
   return '#' + Math.floor(Math.random() * 16777215).toString(16);
@@ -48,7 +49,7 @@ class App extends Component {
               <br />
             </li>
             <li>
-              <h3>React 개정판</h3>
+              <h3>React v2 intro</h3>
               <Link to="/reactBook-E2_1to6">1~6</Link>
               <br />
               <ErrorBoundary>
@@ -56,6 +57,13 @@ class App extends Component {
                 <LifecycleTest color={this.state.color} />
               </ErrorBoundary>
               <button onClick={this.handleClick}>랜덤컬러</button>
+              <br />
+            </li>
+            <li>
+              <h3>불변성 유지하기</h3>
+              <Link to="/none-immer">None immer</Link>
+              <br />
+              <Link to="/by-immer">by immer</Link>
               <br />
             </li>
           </ol>
@@ -70,6 +78,7 @@ class App extends Component {
           <Route path="/destructring" component={Destruct} />
           <Route path="/reactBook-E2_1to6" component={ReactBookE2} />
           {/* <Route path="/reactBook-E2_lifecycle" component={LifecycleTest} /> */}
+          <Route path="/none-immer" component={None_immer} />
         </div>
       </BrowserRouter>
     );
