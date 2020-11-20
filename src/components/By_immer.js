@@ -1,7 +1,8 @@
-//불변성 예제 - immer없이 처리하는 예
+//불변성 예제 - immer 예
 import React, { useRef, useCallback, useState } from 'react';
+import produce from 'immer'; //immer
 
-const None_immer = () => {
+const By_immer = () => {
   //state set
   const nextId = useRef(1);
   const [form, setForm] = useState({ name: '', username: '' });
@@ -14,10 +15,12 @@ const None_immer = () => {
   const onChange = useCallback(
     (e) => {
       const { name, value } = e.target;
-      setForm({
-        ...form,
-        [name]: [value],
-      });
+      setForm(
+        produce(form, (draft) => {
+          //immer
+          draft[name] = value;
+        }),
+      );
     },
     [form],
   );
@@ -33,10 +36,11 @@ const None_immer = () => {
       };
 
       //array에 새로운 항목 추가
-      setData({
-        ...data,
-        array: data.array.concat(info),
-      });
+      setData(
+        produce(data, (draft) => {
+          draft.array.push(info);
+        }),
+      );
 
       setForm({
         name: '',
@@ -50,10 +54,16 @@ const None_immer = () => {
   //remove set
   const onRemove = useCallback(
     (id) => {
-      setData({
-        ...data,
-        array: data.array.filter((info) => info.id !== id),
-      });
+      setData(
+        produce(data, (draft) => {
+          draft.array.splice(
+            //immer는 push나 splice를 사용할 수 있다.
+            //필수는 아니다. 특히 이 remove의 경우엔 filter의 코드가 더 간결하다.
+            draft.array.findIndex((info) => info.id === id),
+            1,
+          );
+        }),
+      );
     },
     [data],
   );
@@ -83,4 +93,4 @@ const None_immer = () => {
   );
 };
 
-export default None_immer;
+export default By_immer;

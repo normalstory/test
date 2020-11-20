@@ -9,6 +9,7 @@ import ReactBookE2 from './components/ReactBookE2';
 import LifecycleTest from './components/LifecycleTest';
 import ErrorBoundary from './components/ErrorBoundary';
 import None_immer from './components/None_immer';
+import By_immer from './components/By_immer';
 
 function getRandomColor() {
   return '#' + Math.floor(Math.random() * 16777215).toString(16);
@@ -79,6 +80,7 @@ class App extends Component {
           <Route path="/reactBook-E2_1to6" component={ReactBookE2} />
           {/* <Route path="/reactBook-E2_lifecycle" component={LifecycleTest} /> */}
           <Route path="/none-immer" component={None_immer} />
+          <Route path="/by-immer" component={By_immer} />
         </div>
       </BrowserRouter>
     );
